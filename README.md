@@ -1,11 +1,13 @@
 
 
 
-# Telegraf, InfluxDB, Grafana (TIG) Stack
+# 차세대 응급안전 시스템 구축
 
-Gain the ability to analyze and monitor telemetry data by deploying the TIG stack within minutes using [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/).
+Docker
 
+Docker compose 
 
+Ubuntu
 
 
 ## ⚡️ Getting Started
