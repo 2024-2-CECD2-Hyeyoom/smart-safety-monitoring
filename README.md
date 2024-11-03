@@ -1,5 +1,4 @@
 
-![Logo](https://user-images.githubusercontent.com/64506580/159311466-f720a877-6c76-403a-904d-134addbd6a86.png)
 
 
 # Telegraf, InfluxDB, Grafana (TIG) Stack
@@ -11,19 +10,24 @@ Gain the ability to analyze and monitor telemetry data by deploying the TIG stac
 
 ## ⚡️ Getting Started
 
-Clone the project
+1. Ubuntu 실행 후 해당 프로젝트 깃 클론
 
 ```bash
-git clone https://github.com/huntabyte/tig-stack.git
+git clone https://github.com/2024-2-CECD2-Hyeyoom/smart-safety-monitoring.git
 ```
 
-Navigate to the project directory
+2. tick-stack 디렉터리로 이동
 
 ```bash
 cd tig-stack
 ```
 
-Change the environment variables define in `.env` that are used to setup and deploy the stack
+3. IDE 열기
+```bash
+code .
+```
+
+4. .env 환경변수 설정(아이디, 비밀번호, API토큰)
 ```bash
 ├── telegraf/
 ├── .env         <---
@@ -32,21 +36,28 @@ Change the environment variables define in `.env` that are used to setup and dep
 └── ...
 ```
 
-Customize the `telegraf.conf` file which will be mounted to the container as a persistent volume
-
-```bash
-├── telegraf/
-│   ├── telegraf.conf <---
-├── .env
-├── docker-compose.yml
-├── entrypoint.sh
-└── ...
-```
-
-Start the services
+5. 다시 우분투 터미널 창으로 돌아와서 해당 명령어 입력하여 서비스 시작
 ```bash
 docker-compose up -d
 ```
+
+만약 권한 문제 생기면 터미널 창에 다음을 입력하세요.
+```bash
+export INFLUX_TOKEN=my_token
+export INFLUX_ORG=my_org
+export INFLUX_BUCKET=my_bucket
+```
+
+6. InfluxDB 
+URL: http://localhost:8086
+Organization : hyeyoom
+Bucket : sensor_data
+2024/08/11 ~ 2024/08/25 시간 설정 후 조회해야 됩니다.
+
+7. Grafana
+URL: http://localhost:3000
+
+
 ## Docker Images Used (Official & Verified)
 
 [**Telegraf**](https://hub.docker.com/_/telegraf) / `1.19`
@@ -55,9 +66,4 @@ docker-compose up -d
 
 [**Grafana-OSS**](https://hub.docker.com/r/grafana/grafana-oss) / `8.4.3`
 
-
-
-## Contributing
-
-Contributions are always welcome!
 
