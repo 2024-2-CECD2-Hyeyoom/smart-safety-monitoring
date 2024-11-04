@@ -50,11 +50,11 @@ export INFLUX_ORG=my_org
 export INFLUX_BUCKET=my_bucket
 ```
 
-6. InfluxDB 
-URL: http://localhost:8086
-Organization : hyeyoom
-Bucket : sensor_data
-2024/08/11 ~ 2024/08/25 시간 설정 후 조회해야 됩니다.
+6. InfluxDB
+- URL: http://localhost:8086
+- Organization : hyeyoom
+- Bucket : sensor_data
+- 2024/08/11 ~ 2024/08/25 시간 설정 후 조회해야 됩니다.
 
 7. Grafana
 URL: http://localhost:3000
