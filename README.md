@@ -55,6 +55,9 @@ export INFLUX_BUCKET=my_bucket
 - Organization : hyeyoom
 - Bucket : sensor_data
 - 2024/08/11 ~ 2024/08/25 시간 설정 후 조회해야 됩니다.
+- 
+![스크린샷(113)](https://github.com/user-attachments/assets/1d1f17f3-501c-48e2-8504-8f2ca44b2a7d)
+
 
 7. Grafana
 URL: http://localhost:3000
