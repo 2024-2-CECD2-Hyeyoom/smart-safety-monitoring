@@ -37,6 +37,11 @@ code .
 ├── entrypoint.sh
 └── ...
 ```
+---
+DOCKER_INFLUXDB_INIT_USERNAME=username # 아이디 입력
+DOCKER_INFLUXDB_INIT_PASSWORD=password # 비밀번호 입력
+DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=token # 토큰 입력
+---
 
 5. 다시 우분투 터미널 창으로 돌아와서 해당 명령어 입력하여 서비스 시작
 ```bash
