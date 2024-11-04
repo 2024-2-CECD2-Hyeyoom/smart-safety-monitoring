@@ -60,7 +60,10 @@ export INFLUX_BUCKET=my_bucket
 
 
 7. Grafana
-URL: http://localhost:3000
+- URL: http://localhost:3000
+- Username: admin
+- Password: admin
+- 추후 password 변경할 수 있습니다.
 
 
 ## Docker Images Used (Official & Verified)
