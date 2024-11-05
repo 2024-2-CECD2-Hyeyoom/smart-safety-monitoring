@@ -1,7 +1,7 @@
-INFLUX_BUCKET="sensor_data"
-INFLUX_ORG="hyeyoom"
-INFLUX_TOKEN="ZCYWE0tfT3kyy6TrKKUn6XCoUkm9DxWuLzR4yaFlrJKcYj7crnpD5LZiwViplhDFnHyZFvCPDcM49mx_bbzjkw=="
-DATA_DIR="/mnt/c/Users/tjgml/Dev/sample_data_csv/modified_sample_data"
+INFLUX_BUCKET="changeme"
+INFLUX_ORG="changeme"
+INFLUX_TOKEN="changeme"
+DATA_DIR="changeme"
 TEMP_FILE="/tmp/influx_data.csv"
 SENSOR_FILE_PATTERNS=("_심박_센서측정정보.csv" "_호흡_센서측정정보.csv")
 
