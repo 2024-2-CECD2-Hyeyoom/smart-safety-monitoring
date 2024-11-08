@@ -18,10 +18,10 @@ Ubuntu
 git clone https://github.com/2024-2-CECD2-Hyeyoom/smart-safety-monitoring.git
 ```
 
-2. tig-stack 디렉터리로 이동
+2. smart-safety-monitoring 디렉터리로 이동
 
 ```bash
-cd tig-stack
+cd smart-safety-monitoring
 ```
 
 3. IDE 열기
