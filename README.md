@@ -13,6 +13,13 @@ docker-compose
 git clone https://github.com/2024-2-CECD2-Hyeyoom/smart-safety-monitoring.git
 cd smart-safety-monitoring
 
+// 스크립트 CRLF --> LF 형식으로 전환
+awk '{ sub("\r$", ""); print }' scripts/upload_data.sh > scripts/upload_data_unix.sh
+mv scripts/upload_data_unix.sh scripts/upload_data.sh
+
+awk '{ sub("\r$", ""); print }' scripts/upload_hr_rp_data.sh > scripts/upload_hr_rp_data_unix.sh
+mv scripts/upload_hr_rp_data_unix.sh scripts/upload_hr_rp_data.sh
+
 echo "hy" > ~/.env.influxdb2-admin-username  
 echo "hy12345678" > ~/.env.influxdb2-admin-password
 echo $(openssl rand -base64 32) > ~/.env.influxdb2-admin-token
@@ -35,6 +42,7 @@ docker-compose up -d
 
 ### 4. influxdb 실행
 http://localhost:8086
+
 시간 설정 (2024/08/11 ~ 2024/08/24)
 
 ** 만약 오류 나서 다시 실행해야 하는 경우 도커 volume을 모두 삭제해야 함.
