@@ -19,8 +19,10 @@ echo $(openssl rand -base64 32) > ~/.env.influxdb2-admin-token
 ```
 
 ### 2. docker-compose.yml 수정
-```bash
-
+```
+- type: bind
+  source: ~/Dev/sample_data_csv/modified_sample_data # 이 부분을 자기 로컬에 다운받은 데이터 폴더 경로를 넣어줘야 함 ** 경로 주의해서 넣기!
+  target: /data  
 
 ```
 
@@ -30,5 +32,9 @@ docker pull seohee0348/hy_influxdb:latest
 
 docker-compose up -d
 ```
+
+### 4. influxdb 실행
+http://localhost:8086
+시간 설정 (2024/08/11 ~ 2024/08/24)
 
 ** 만약 오류 나서 다시 실행해야 하는 경우 도커 volume을 모두 삭제해야 함.
