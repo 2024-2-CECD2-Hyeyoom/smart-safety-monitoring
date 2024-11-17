@@ -23,6 +23,10 @@ mv scripts/upload_hr_rp_data_unix.sh scripts/upload_hr_rp_data.sh
 echo "hy" > ~/.env.influxdb2-admin-username  
 echo "hy12345678" > ~/.env.influxdb2-admin-password
 echo $(openssl rand -base64 32) > ~/.env.influxdb2-admin-token
+
+# 실행 권한 추가
+chmod +x scripts/upload_data.sh
+chmod +x scripts/upload_hr_rp_data.sh
 ```
 
 ### 2. docker-compose.yml 수정
