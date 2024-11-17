@@ -13,7 +13,6 @@ docker-compose
 git clone https://github.com/2024-2-CECD2-Hyeyoom/smart-safety-monitoring.git
 cd smart-safety-monitoring
 
-// 스크립트 CRLF --> LF 형식으로 전환
 awk '{ sub("\r$", ""); print }' scripts/upload_data.sh > scripts/upload_data_unix.sh
 mv scripts/upload_data_unix.sh scripts/upload_data.sh
 
@@ -24,7 +23,6 @@ echo "hy" > ~/.env.influxdb2-admin-username
 echo "hy12345678" > ~/.env.influxdb2-admin-password
 echo $(openssl rand -base64 32) > ~/.env.influxdb2-admin-token
 
-# 실행 권한 추가
 chmod +x scripts/upload_data.sh
 chmod +x scripts/upload_hr_rp_data.sh
 ```
