@@ -34,6 +34,7 @@ chmod +x scripts/upload_hr_rp_data.sh
   target: /data  
 
 ```
+노션에서 sample_data2(20인) 다운받으면 됨.
 
 ### 3. 도커 이미지 pull하고 실행
 ```bash
