@@ -51,13 +51,13 @@ upload_event_data() {
 
   # 임시 파일 생성 (InfluxDB 형식에 맞게 변환)
   local temp_event_file="/tmp/event_data.csv"
-  echo "user_name,subject_id,subject_name,event_code,event_description,event_time,registration_time" > "$temp_event_file"
+  echo "user_name,subject_id,event_code,event_description,event_time,registration_time" > "$temp_event_file"
 
   # CSV 데이터를 읽고 확인
-  while IFS=',' read -r subject_id subject_name event_code event_description event_time registration_time; do
+  while IFS=',' read -r subject_id event_code event_description event_time registration_time; do
     # event_code 유효성 검증 (빈 값이 아닌 경우만 포함)
     if [[ -n "$event_code" ]]; then
-      echo "$user_name,$subject_id,$subject_name,$event_code,$event_description,$event_time,$registration_time" >> "$temp_event_file"
+      echo "$user_name,$subject_id,$event_code,$event_description,$event_time,$registration_time" >> "$temp_event_file"
     fi
   done < "$file"
 
@@ -68,8 +68,8 @@ upload_event_data() {
     -t "$INFLUX_TOKEN" \
     --skipHeader 1 \
     --header "#constant measurement,${user_name}_events" \
-    --header "#datatype tag,tag,tag,tag,string,dateTime:RFC3339,string" \
-    --header "user_name,subject_id,subject_name,event_code,event_description,event_time,registration_time" \
+    --header "#datatype tag,tag,tag,string,dateTime:RFC3339,string" \
+    --header "user_name,subject_id,event_code,event_description,event_time,registration_time" \
     -f "$temp_event_file"
 
   # 임시 파일 삭제
